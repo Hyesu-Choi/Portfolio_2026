@@ -32,6 +32,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  word-break: keep-all;
 }
 
 body {
@@ -372,7 +373,7 @@ body {
 .toc {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 12px;
 }
 
@@ -578,10 +579,24 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .page {
+    margin: 20px auto;
+    padding: 0 12px;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+  .project {
+    gap: 10px;
+  }
+
   .header__profile {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 26px;
   }
 
   .header__title-row {
@@ -590,11 +605,41 @@ body {
 
   .contact-links {
     justify-content: center;
+    row-gap: 10px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .toc {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .toc__link {
+    padding: 12px;
+    gap: 12px;
   }
 
   .timeline__item {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .project__title {
+    font-size: 18px;
+  }
+
+  .project__meta {
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap: 6px;
+  }
+
+  .project__grid {
+    gap: 16px;
   }
 }
 
