@@ -776,52 +776,65 @@
     </main>
 
     <script>
-      // 프로젝트 목차 자동 생성
-      (function buildTOC() {
+      // 프로젝트 목차 및 바닥글 자동 생성
+      (function buildUI() {
         const toc = document.getElementById("projects-toc");
-        if (!toc) return;
+        const projects = Array.from(document.querySelectorAll("[data-project]"));
+        const allCards = Array.from(document.querySelectorAll(".card"));
+        
+        // 1. 프로젝트 목차 생성
+        if (toc) {
+          const frag = document.createDocumentFragment();
+          projects.forEach((el, idx) => {
+            const titleEl = el.querySelector("[data-project-title]");
+            const dateEl = el.querySelector(".badge");
+            const rawTitle = titleEl?.textContent?.trim() || `프로젝트 ${idx + 1}`;
+            const rawDate = dateEl?.textContent?.trim() || "";
+            const id = `project-${idx + 1}`;
+            el.id = id;
 
-        const projects = Array.from(
-          document.querySelectorAll("[data-project]"),
-        );
-        const frag = document.createDocumentFragment();
+            const li = document.createElement("li");
+            li.className = "toc__item";
+            const a = document.createElement("a");
+            a.href = `#${id}`;
+            a.className = "toc__link";
+            const num = (idx + 1).toString().padStart(2, "0");
+            a.innerHTML = `
+              <span class="toc__num">${num}</span>
+              <div class="toc__info">
+                <span class="toc__title">${rawTitle}</span>
+                <span class="toc__date">${rawDate}</span>
+              </div>
+              <i data-lucide="chevron-right" class="toc__arrow"></i>
+            `;
+            li.appendChild(a);
+            frag.appendChild(li);
+          });
+          toc.innerHTML = "";
+          toc.appendChild(frag);
+        }
 
-        projects.forEach((el, idx) => {
-          const titleEl = el.querySelector("[data-project-title]");
-          const dateEl = el.querySelector(".badge"); // 첫 번째 배지(기간)를 가져옴
-          const rawTitle =
-            titleEl?.textContent?.trim() || `프로젝트 ${idx + 1}`;
-          const rawDate = dateEl?.textContent?.trim() || "";
-          const id = `project-${idx + 1}`;
+        // 2. 바닥글 추가 (첫 번째, 두 번째 섹션 제외)
+        allCards.forEach((card, idx) => {
+          if (idx < 2) return; // 첫 번째(Intro), 두 번째(Experience) 섹션은 건너뜀
+          
+          const footer = document.createElement("div");
+          footer.className = "section-footer-print";
+          
+          // 섹션 타이틀 찾기
+          let sectionTitle = "";
+          const titleEl = card.querySelector(".section-title, .project__title, .name");
+          if (titleEl) {
+            sectionTitle = titleEl.textContent.trim().split("\n")[0];
+          } else {
+            sectionTitle = "Portfolio";
+          }
 
-          el.id = id;
-
-          const li = document.createElement("li");
-          li.className = "toc__item";
-
-          const a = document.createElement("a");
-          a.href = `#${id}`;
-          a.className = "toc__link";
-
-          const num = (idx + 1).toString().padStart(2, "0");
-
-          a.innerHTML = `
-            <span class="toc__num">${num}</span>
-            <div class="toc__info">
-              <span class="toc__title">${rawTitle}</span>
-              <span class="toc__date">${rawDate}</span>
-            </div>
-            <i data-lucide="chevron-right" class="toc__arrow"></i>
-          `;
-
-          li.appendChild(a);
-          frag.appendChild(li);
+          footer.innerHTML = `<span>${sectionTitle}</span>`;
+          card.appendChild(footer);
         });
 
-        toc.innerHTML = "";
-        toc.appendChild(frag);
-
-        // 아이콘 다시 생성 (동적으로 추가된 아이콘들을 위해)
+        // 아이콘 다시 생성
         lucide.createIcons();
       })();
     </script>
