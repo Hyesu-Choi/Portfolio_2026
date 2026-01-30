@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>최혜수 | Frontend Engineer</title>
     <meta property="og:title" content="최혜수 | Frontend Engineer" />
-    <meta property="og:description" content="단독/리딩 경험을 기반으로 비즈니스 가치를 창출하는 3년차 프론트엔드 개발자 최혜수입니다." />
-    <meta property="og:image" content="./opengraphimg.png" />
+    <meta
+      property="og:description"
+      content="비즈니스 가치를 창출하는 3년차 프론트엔드 개발자 최혜수입니다."
+    />
+    <meta property="og:image" content="./images/opengraphimg.png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:site_name" content="최혜수 포트폴리오" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="description" content="단독/리딩 경험을 기반으로 비즈니스 가치를 창출하는 3년차 프론트엔드 개발자 최혜수입니다." />
+    <meta
+      name="description"
+      content="비즈니스 가치를 창출하는 3년차 프론트엔드 개발자 최혜수입니다."
+    />
     <link
       rel="stylesheet"
       as="style"
@@ -30,7 +36,7 @@
       <header class="card header intro" aria-label="요약">
         <div class="header__profile">
           <div class="avatar" aria-hidden="true">
-            <img src="./photo.jpg" alt="프로필 사진" />
+            <img src="./images/photo.jpg" alt="프로필 사진" />
           </div>
 
           <div class="header__meta">
@@ -360,6 +366,45 @@
                 </li>
               </ul>
             </div>
+
+            <!-- Project Visuals -->
+            <div class="project__visuals">
+              <div class="project__image-grid">
+                <div class="project__image-box">
+                  <img
+                    src="./images/p1_detail.png"
+                    alt="펫링크 프렌즈 B2C 서비스 상세 화면"
+                  />
+                  <div class="project__image-caption">
+                    <i data-lucide="image" class="icon"></i>
+                    주요 인터렉션 및 상품 주문
+                  </div>
+                </div>
+                <div class="project__image-box">
+                  <img
+                    src="./images/p1_petDetail.png"
+                    alt="펫링크 프렌즈 반려동물 상세 화면"
+                  />
+                  <div class="project__image-caption">
+                    <i data-lucide="image" class="icon"></i>
+                    반려동물 상세 분양 프로세스
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="project__image-grid">
+                <div class="project__image-box">
+                  <img
+                    src="./images/p1_mypage_1.png"
+                    alt="펫링크 프렌즈 마이페이지 1"
+                  />
+                  <div class="project__image-caption">
+                    <i data-lucide="image" class="icon"></i>
+                    마이페이지 반려동물 관리
+                  </div>
+                </div>
+              
+              </div> -->
+            </div>
           </section>
         </article>
 
@@ -606,6 +651,20 @@
                 </li>
               </ul>
             </div>
+
+            <!-- Project Visuals -->
+            <div class="project__visuals">
+              <div class="project__image-box">
+                <img
+                  src="./images/p4_chart.jpg"
+                  alt="KHEPI 금연 통합 구축 대시보드 화면"
+                />
+                <div class="project__image-caption">
+                  <i data-lucide="image" class="icon"></i>
+                  Toast UI Chart를 활용한 운영 데이터 대시보드 시각화 화면
+                </div>
+              </div>
+            </div>
           </section>
         </article>
 
@@ -690,6 +749,32 @@
                 </li>
               </ul>
             </div>
+
+            <!-- Project Visuals -->
+            <div class="project__visuals">
+              <div class="project__image-grid">
+                <div class="project__image-box">
+                  <img
+                    src="./images/p5_mypage_1.png"
+                    alt="서울 영테크 마이페이지 1"
+                  />
+                  <div class="project__image-caption">
+                    <i data-lucide="image" class="icon"></i>
+                    마이페이지 재무상담 현황 관리
+                  </div>
+                </div>
+                <div class="project__image-box">
+                  <img
+                    src="./images/p5_mypage_2.png"
+                    alt="서울 영테크 마이페이지 2"
+                  />
+                  <div class="project__image-caption">
+                    <i data-lucide="image" class="icon"></i>
+                    마이페이지 영테크 클래스 현황 관리
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         </article>
         <!-- 6. SK렌터카 다이렉트 -->
@@ -701,8 +786,8 @@
               </h2>
               <div class="project__meta">
                 <span class="badge"
-                  ><i data-lucide="calendar" class="badge-icon"></i>22.11 –
-                  23.04
+                  ><i data-lucide="calendar" class="badge-icon"></i>2022.11 –
+                  2023.04
                 </span>
                 <span class="badge"
                   ><i data-lucide="users" class="badge-icon"></i>FE 3, BE
@@ -779,16 +864,19 @@
       // 프로젝트 목차 및 바닥글 자동 생성
       (function buildUI() {
         const toc = document.getElementById("projects-toc");
-        const projects = Array.from(document.querySelectorAll("[data-project]"));
+        const projects = Array.from(
+          document.querySelectorAll("[data-project]"),
+        );
         const allCards = Array.from(document.querySelectorAll(".card"));
-        
+
         // 1. 프로젝트 목차 생성
         if (toc) {
           const frag = document.createDocumentFragment();
           projects.forEach((el, idx) => {
             const titleEl = el.querySelector("[data-project-title]");
             const dateEl = el.querySelector(".badge");
-            const rawTitle = titleEl?.textContent?.trim() || `프로젝트 ${idx + 1}`;
+            const rawTitle =
+              titleEl?.textContent?.trim() || `프로젝트 ${idx + 1}`;
             const rawDate = dateEl?.textContent?.trim() || "";
             const id = `project-${idx + 1}`;
             el.id = id;
@@ -817,13 +905,15 @@
         // 2. 바닥글 추가 (첫 번째, 두 번째 섹션 제외)
         allCards.forEach((card, idx) => {
           if (idx < 2) return; // 첫 번째(Intro), 두 번째(Experience) 섹션은 건너뜀
-          
+
           const footer = document.createElement("div");
           footer.className = "section-footer-print";
-          
+
           // 섹션 타이틀 찾기
           let sectionTitle = "";
-          const titleEl = card.querySelector(".section-title, .project__title, .name");
+          const titleEl = card.querySelector(
+            ".section-title, .project__title, .name",
+          );
           if (titleEl) {
             sectionTitle = titleEl.textContent.trim().split("\n")[0];
           } else {

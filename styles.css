@@ -524,6 +524,62 @@ body {
   display: none;
 }
 
+/* Project Visuals */
+.project__visuals {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project__image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.project__image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.project__image-grid .project__image-box {
+  max-width: none; /* 그리드 내에서는 너비 제한 해제 */
+}
+
+.project__image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.project__image-caption {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* Print Optimization */
 @media print {
   :root {
@@ -572,7 +628,6 @@ body {
   .toc__link {
     padding: 8px 0;
     background: transparent !important;
-    border: none !important;
     border-bottom: 1px solid var(--border) !important;
   }
 
@@ -628,11 +683,6 @@ body {
   .experience-role {
     color: #2563eb !important;
   }
-  .stack {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
 
   .project__label {
     color: #64748b !important;
@@ -657,7 +707,7 @@ body {
     font-size: 15pt;
   }
 
-  .project__footer-print,
+  /* .project__footer-print,
   .section-footer-print {
     display: flex !important;
     justify-content: space-between;
@@ -669,15 +719,39 @@ body {
     font-family: var(--mono);
   }
 
-  /* 페이지 번호 시뮬레이션 (CSS 카운터) */
   body {
     counter-reset: page;
   }
-
+  
   .project__footer-print::after,
   .section-footer-print::after {
     counter-increment: page;
     content: "Page " counter(page);
+  } */
+
+  .project__visuals {
+    margin-top: 16px;
+    page-break-inside: avoid;
+  }
+
+  .project__image-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+
+  .project__image-box {
+    max-width: 240px !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: 1px solid var(--border) !important;
+  }
+
+  .project__image-caption {
+    font-size: 8pt;
+    padding: 6px 12px;
   }
 
   .bullets li {
@@ -756,6 +830,11 @@ body {
 
   .project__grid {
     gap: 16px;
+  }
+
+  .project__image-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
