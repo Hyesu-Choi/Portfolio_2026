@@ -7,7 +7,7 @@
     <meta property="og:title" content="최혜수 | Frontend Engineer" />
     <meta
       property="og:description"
-      content="비즈니스 가치를 창출하는 3년차 프론트엔드 개발자 최혜수입니다."
+      content="비즈니스 가치를 창출하는 4년차 프론트엔드 개발자 최혜수입니다."
     />
     <meta property="og:image" content="./images/opengraphimg.png" />
     <meta property="og:type" content="website" />
@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       name="description"
-      content="비즈니스 가치를 창출하는 3년차 프론트엔드 개발자 최혜수입니다."
+      content="비즈니스 가치를 창출하는 4년차 프론트엔드 개발자 최혜수입니다."
     />
     <link
       rel="stylesheet"
@@ -47,7 +47,7 @@
                 이직 제안 대기 중
               </div> -->
             </div>
-            <p class="tagline"><b>Frontend Engineer</b> · 3년차</p>
+            <p class="tagline"><b>Frontend Engineer</b> · 4년차</p>
             <p class="summary">
               단독/리딩 경험을 바탕으로 서비스 구축부터 운영까지 수행한
               프론트엔드 개발자입니다. <br />비즈니스 로직에 최적화된 아키텍처를
@@ -117,8 +117,11 @@
             <span class="chip" role="listitem">Next.js</span>
             <span class="chip" role="listitem">React</span>
             <span class="chip" role="listitem">TypeScript</span>
+            <span class="chip" role="listitem">React Query</span>
             <span class="chip" role="listitem">Svelte / SvelteKit</span>
             <span class="chip" role="listitem">Node.js</span>
+            <span class="chip" role="listitem">Kotlin / Spring Boot</span>
+            <span class="chip" role="listitem">AWS · GitHub Actions</span>
             <span class="chip" role="listitem">REST API</span>
             <span class="chip" role="listitem">HTML/CSS</span>
             <!-- <span class="chip" role="listitem">성능 최적화</span> -->
@@ -133,6 +136,43 @@
         </h2>
 
         <div class="experience-list">
+          <article class="experience-item">
+            <header class="experience-header">
+              <h3 class="experience-company">
+                라이드 주식회사
+                <span class="experience-duration">재직중</span>
+              </h3>
+              <span class="experience-period">2026.03 – 현재</span>
+            </header>
+            <div class="experience-role">IT인프라팀 · 대리</div>
+            <p class="experience-desc">
+              사내 판매관리 시스템의 프론트엔드를 리딩하고, CTI 콜센터 시스템의
+              IVR 도메인을 DB부터 관리자 화면까지 풀스택으로 개발했습니다.
+              프론트엔드 AWS 인프라(S3·CloudFront·Route53)와 GitHub Actions
+              CI/CD를 직접 구축했습니다.
+            </p>
+            <ul class="experience-projects">
+              <li>
+                <span class="experience-project-title"
+                  >CTI 콜센터 IVR 시나리오 편집기</span
+                >
+                <span class="experience-project-desc"
+                  >Kotlin/Spring Boot · React 기반 노드 그래프 IVR 편집기 및
+                  실행 엔진 풀스택 개발</span
+                >
+              </li>
+              <li>
+                <span class="experience-project-title"
+                  >수입차 판매관리 백오피스 구축</span
+                >
+                <span class="experience-project-desc"
+                  >React 기반 22개 화면 · 73개 API 연동, OCR 자동입력 및 FSD
+                  아키텍처 리팩터링</span
+                >
+              </li>
+            </ul>
+          </article>
+
           <article class="experience-item">
             <header class="experience-header">
               <h3 class="experience-company">
@@ -232,7 +272,7 @@
             <!-- <div class="experience-role">프론트엔드 / 퍼블리셔</div> -->
             <p class="experience-desc">
               대기업 B2C 프로젝트의 프론트엔드 퍼블리싱 및 UI 구현을 담당하며
-              담당하며 다양한 브라우저 호환성 및 반응형 웹 구현 역량을
+              다양한 브라우저 호환성 및 반응형 웹 구현 역량을
               쌓았습니다.
             </p>
             <ul class="experience-projects">
@@ -268,6 +308,221 @@
 
       <!-- PROJECTS -->
       <section class="stack">
+        <!-- CTI IVR 시나리오 편집기 -->
+        <article class="card project" data-project>
+          <header class="project__head">
+            <div class="project__title-wrap">
+              <h2 class="project__title" data-project-title>
+                CTI 콜센터 IVR 시나리오 편집기 (풀스택)
+              </h2>
+              <div class="project__meta">
+                <span class="badge"
+                  ><i data-lucide="calendar" class="badge-icon"></i>2026.08 –
+                  2026.10</span
+                >
+                <span class="badge"
+                  ><i data-lucide="users" class="badge-icon"></i>풀스택 2</span
+                >
+              </div>
+            </div>
+          </header>
+
+          <section class="project__grid">
+            <div class="project__block">
+              <h3 class="project__label">기술스택</h3>
+              <div class="chips">
+                <span class="chip">React</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Zustand</span>
+                <span class="chip">React Query</span>
+                <span class="chip">Kotlin</span>
+                <span class="chip">Spring Boot</span>
+                <span class="chip">JPA</span>
+                <span class="chip">Flyway</span>
+                <span class="chip">AWS Polly · S3</span>
+                <span class="chip">Asterisk</span>
+                <span class="chip">GitHub Actions</span>
+              </div>
+            </div>
+
+            <div class="project__block">
+              <h3 class="project__label">개요</h3>
+              <p class="description">
+                렌터카 콜센터의 Asterisk 기반 CTI 시스템에서 고객이 전화를 걸면
+                처음 듣는 ARS 흐름(IVR)을 관리자가 직접 설계하도록 만든
+                프로젝트입니다. 코드에 고정되어 있던 흐름을
+                <b>노드 그래프 기반으로 전환하고, DB 마이그레이션·도메인·API·관리자
+                  화면까지 IVR 도메인 전체를 풀스택으로 담당</b
+                >했습니다.
+              </p>
+            </div>
+
+            <div class="project__block">
+              <h3 class="project__label">주요 업무 및 구현</h3>
+              <ul class="bullets">
+                <li>
+                  하드코딩된 라우팅으로 2단계 메뉴·다시 듣기·오입력 재시도가
+                  불가능하던 구조를
+                  <b>노드/엣지 그래프 모델과 실행 엔진(FlowRunner)</b>으로
+                  재설계했습니다.
+                </li>
+                <li>
+                  드래그·줌·연결선 위 단계 삽입이 가능한
+                  <b>노드 그래프 캔버스 편집기</b>를 구현하고, 연속 드래그·입력을
+                  한 단계로 묶는 <b>50단계 Undo/Redo</b>를 설계했습니다.
+                </li>
+                <li>
+                  사이클 탐지, 안내 멘트 없이 상담원 연결로 이어지는 경로 차단 등
+                  <b>그래프 검증기</b>를 구현하고, 편집 중에는 서버 검증 API를
+                  디바운스 호출하여 규칙을 서버 한 곳에서만 관리하도록 했습니다.
+                </li>
+                <li>
+                  멘트 저장 시 커밋 이후 비동기로
+                  <b>AWS Polly 음성 합성 → S3 → 전화 서버 배포</b>로 이어지는 TTS
+                  파이프라인을 구축했습니다.
+                </li>
+                <li>
+                  멘트 7종, 요일별 업무시간·공휴일(공공 API 동기화), 상담유형
+                  트리 등 <b>IVR 시나리오 관리 API 29개와 관리자 화면</b>을
+                  개발했습니다.
+                </li>
+                <li>
+                  상담원 클라이언트의
+                  <b>S3 · CloudFront · Route53 인프라와 GitHub Actions 기반
+                    Dev/Prod 배포 파이프라인</b
+                  >을 구축했습니다.
+                </li>
+              </ul>
+            </div>
+
+            <div class="project__block">
+              <h3 class="project__label">핵심 성과</h3>
+              <ul class="bullets">
+                <li>
+                  기존 키 입력별 라우팅 결과와 동일함을 테스트로 검증하여
+                  <b>운영 흐름 변경 없이 그래프 구조로 안전하게 전환</b>했습니다.
+                </li>
+                <li>
+                  기존 노드의 서버 ID 보존과 버전 기반 TTS 파일 관리로
+                  <b>안내 음성이 무음으로 나가는 장애 가능성을 차단</b>하고,
+                  @Version 기반 동시 편집 충돌을 방지했습니다.
+                </li>
+                <li>
+                  실통화 테스트에서 <b>"#" 입력이 무입력으로 처리되던 버그와
+                  상담유형 순환 참조로 인한 무한루프</b>를 원인 분석 후
+                  해결했습니다.
+                </li>
+                <li>
+                  Claude Code를 활용한 AI 페어 프로그래밍으로 설계안을 검증하며,
+                  프론트엔드에서 <b>백엔드·테스트 코드(약 3.6k줄)까지</b> 개발
+                  범위를 확장했습니다.
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+
+        <!-- 수입차 판매관리 백오피스 -->
+        <article class="card project" data-project>
+          <header class="project__head">
+            <div class="project__title-wrap">
+              <h2 class="project__title" data-project-title>
+                수입차 판매관리 백오피스 구축
+              </h2>
+              <div class="project__meta">
+                <span class="badge"
+                  ><i data-lucide="calendar" class="badge-icon"></i>2026.03 –
+                  2026.04</span
+                >
+                <span class="badge"
+                  ><i data-lucide="users" class="badge-icon"></i>FE 2</span
+                >
+              </div>
+            </div>
+          </header>
+
+          <section class="project__grid">
+            <div class="project__block">
+              <h3 class="project__label">기술스택</h3>
+              <div class="chips">
+                <span class="chip">React</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">TanStack Query</span>
+                <span class="chip">TanStack Table</span>
+                <span class="chip">react-hook-form</span>
+                <span class="chip">zod</span>
+                <span class="chip">nuqs</span>
+                <span class="chip">AWS S3 · CloudFront · Route53</span>
+                <span class="chip">GitHub Actions</span>
+              </div>
+            </div>
+
+            <div class="project__block">
+              <h3 class="project__label">개요</h3>
+              <p class="description">
+                수입차 딜러 영업조직의 고객·재고·계약·출고·손익을 관리하는 사내
+                판매관리 시스템입니다.
+                <b>프론트엔드 리드로서 프로젝트 셋업부터 아키텍처 설계, 핵심
+                  도메인 개발까지</b
+                >
+                담당했습니다.
+              </p>
+            </div>
+
+            <div class="project__block">
+              <h3 class="project__label">주요 업무 및 구현</h3>
+              <ul class="bullets">
+                <li>
+                  <b>S3 + CloudFront + Route53 기반 프론트엔드 인프라</b>를
+                  구축하고, GitHub Actions로 Dev/Prod 환경별 빌드 → S3 배포 →
+                  CloudFront 캐시 무효화까지 이어지는
+                  <b>CI/CD 파이프라인</b>을 구성했습니다.
+                </li>
+                <li>
+                  견적서·제작증 이미지/PDF를 업로드하면 약 20개 필드를 자동으로
+                  채우는 <b>OCR 차량등록 기능</b>을 구현했습니다. (pdf.js 변환,
+                  한글 CMap 처리, 클립보드 업로드, 실패 시 재시도)
+                </li>
+                <li>
+                  동시에 여러 요청이 만료되어도 재발급은 한 번만 수행하고 나머지는
+                  대기 후 재시도하는 <b>토큰 재발급 큐</b>를 구현했습니다.
+                </li>
+                <li>
+                  할인율·면세 유형에 따라 예상 매입가·판매가·마진을 실시간으로
+                  계산하는 <b>손익분석 계산기</b>를 개발했습니다.
+                </li>
+                <li>
+                  출고 결제내역 편집, 파일 관리, 합계 자동 계산 등
+                  <b>출고 상세/수정 비즈니스 플로우</b>를 구축했습니다.
+                </li>
+              </ul>
+            </div>
+
+            <div class="project__block">
+              <h3 class="project__label">핵심 성과</h3>
+              <ul class="bullets">
+                <li>
+                  검색·정렬·페이지 상태를 URL로 관리하는 공통 훅과 DataTable을
+                  만들어 <b>목록 화면 6개를 표준화</b>하고, 새로고침·뒤로가기 시
+                  조건이 사라지던 문제를 해결했습니다.
+                </li>
+                <li>
+                  <b>FSD 아키텍처 기반 대규모 리팩터링(154개 파일)</b>과 도메인별
+                  Query Key Factory 도입으로 데이터 갱신 누락 버그를 제거했습니다.
+                </li>
+                <li>
+                  아키텍처·코딩 컨벤션·React Query 가이드를 문서화하여
+                  <b>팀 개발 표준</b>을 수립했습니다.
+                </li>
+                <li>
+                  22개 화면, 73개 API 연동을 수행하며 전체 코드의
+                  <b>약 86%</b>를 작성했습니다.
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+
         <!-- 1. 펫링크 프렌즈 B2C -->
         <article class="card project" data-project>
           <header class="project__head">
